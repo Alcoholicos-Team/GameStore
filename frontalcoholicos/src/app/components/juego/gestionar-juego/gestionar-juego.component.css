@@ -1,0 +1,17 @@
+button{
+    box-shadow: rgb(42, 173, 36) 3px 3px 5px;
+    color: rgb(42, 173, 36);
+}
+
+button:hover{
+    background-color: rgb(42, 173, 36);
+    border: solid rgb(42, 173, 36) 2px;
+    box-shadow: rgb(32, 32, 32) 4px 4px 3px;
+    color: rgb(255, 255, 255);
+}
+
+button:focus{
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgb(42, 173, 36) 4px 4px 4px;
+    color: rgb(42, 173, 36);
+}

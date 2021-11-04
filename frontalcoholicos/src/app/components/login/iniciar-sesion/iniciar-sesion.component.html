@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6" id="hey">
+      <form [formGroup]="checkForm" (ngSubmit)="onSubmit(checkForm.value)">
+        <div class="mb-3">
+          <label for="usuario" class="col-form-label">user:</label>
+          <input type="text" class="form-control" id="usuario" formControlName="user" [ngClass]="{ 'is-invalid' : submitted && user.user.errors }">
+          <div *ngIf="submitted && user.user.errors" class="invalid-feedback">
+            <div *ngIf="user.user.errors.required">El usuario es requerido</div> 
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="contraseña" class="col-form-label">Password:</label>
+          <input type="password" class="form-control" id="contraseña" formControlName="password" [ngClass]="{ 'is-invalid' : submitted && user.password.errors }">
+          <div *ngIf="submitted && user.password.errors" class="invalid-feedback">
+            <div *ngIf="user.password.errors.required">La contraseña es obligatoria</div> 
+          </div>
+          <div *ngIf="submitted && user.password.errors" class="invalid-feedback">
+            <div *ngIf="user.password.errors.minlength">Ingrese un minimo de 8 caracteres</div> 
+          </div>
+        </div>
+        <button type="button" class="btn btn-outline-secondary m-3" (click)="cambiar()">Cancelar</button>
+        <button type="submit" class="btn btn-outline-success m-3">Iniciar Sesion</button>
+      </form>    
+    </div>
+    <hr/>
+    <div class="col-6" id="hola">
+      <p>Unete a Alcoholicos y aprovecha todas nuestros veneficios</p>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHQEH6ThQaGWFaqCRgYQPOvAWDCZefNl_cIg&usqp=CAU" alt="Imagen de presentacion">
+      <p>!Unete ya¡</p>
+      <button type="button" class="btn btn-success" (click)="crearCuenta()">Unirse</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="card">
+    <div class="card-header">
+      Crear Cuenta
+    </div>
+    <div class="card-body"><div>
+        <form [formGroup]="checkForm" (ngSubmit)="login(checkForm.value)">
+            <div class="mb-3">
+              <label for="emial" class="col-form-label">E-mail:</label>
+              <input type="text" class="form-control" id="emial" formControlName="email" [ngClass]="{ 'is-invalid' : submitted && user.email.errors }">
+              <div *ngIf="submitted && user.email.errors" class="invalid-feedback">
+                <div *ngIf="user.email.errors.pattern">Ingrese un e-mail valido</div> 
+              </div>
+            </div>
+            <div class="mb-3">
+                <label for="usuario" class="col-form-label">User:</label>
+                <input type="text" class="form-control" id="usuario" formControlName="user" [ngClass]="{ 'is-invalid' : submitted && user.user.errors }">
+                <div *ngIf="submitted && user.user.errors" class="invalid-feedback">
+                  <div *ngIf="user.user.errors.required">El nombre de usuario es requerido</div> 
+                </div>
+              </div>
+            <div class="mb-3">
+              <label for="contraseña" class="col-form-label">Password:</label>
+              <input type="password" class="form-control" id="contraseña" formControlName="password" [ngClass]="{ 'is-invalid' : submitted && user.password.errors }">
+              <div *ngIf="submitted && user.password.errors" class="invalid-feedback">
+                <div *ngIf="user.password.errors.required">La contraseña es requerido</div> 
+              </div>
+              <div *ngIf="submitted && user.password.errors" class="invalid-feedback">
+                <div *ngIf="user.password.errors.minlength">Necesita almenos 8 caracteres</div> 
+              </div>
+            </div>
+            <button type="button" class="btn btn-outline-secondary m-3" (click)="cambiar()">Cancelar</button>
+            <button type="submit" class="btn btn-outline-success m-3">Crear</button>
+          </form> 
+    </div>
+  </div>

@@ -1,0 +1,37 @@
+<div class="modal fade" id="eliminarModal" tabindex="-1" aria-labelledby="eliminarModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="eliminarModalLabel">Eliminar juego</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="main row p-3">
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col	col-sm-12 col-md-6	col-lg-6">
+                <img class="img-fluid" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnco7I9LExCtB-3j2VkAFSNeV9r9DFd8IJTw&usqp=CAU" alt="imagen del producto">
+              </div>
+              <div class="col	col-sm-12 col-md-6	col-lg-6">
+                <div class="card-body">
+                  <h5 class="card-title">{{juego.nombre}}</h5>
+                  <p class="card-text">{{juego.descripcion}}</p>
+                </div>
+              </div>
+            </div>
+          </div>   
+          <div class="modal-footer">
+            <div class="form-group">
+              <button type="button" class="btn btn-secondary m-2" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-danger m-2" (click)="question()">Eliminar Juego</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<simple-notifications [options]="options"></simple-notifications>

@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+      <div *ngFor="let game of games"  class="card text-white m-4 col-4" style="max-width: 18rem;">
+            <div class="card-header">categoria...</div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnco7I9LExCtB-3j2VkAFSNeV9r9DFd8IJTw&usqp=CAU" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{ game.nombre }}</h5>
+                <p class="card-text"><p>Descripcion: {{ game.descripcion }}<br/>Precio: $ {{ game.precio }}</p>
+                <ng-container *ngIf="proveedor else cliente">
+                    <button type="button" (click)="pasar(game)" class="btn btn-warning m-1" data-toggle="modal" data-target="#editarModal" data-whatever="@mdo"><i class="fas fa-edit"></i></button>
+                    <button type="button" (click)="pasar(game)" class="btn btn-danger m-1" data-toggle="modal" data-target="#eliminarModal" data-whatever="@mdo"><i class="far fa-trash-alt"></i></button>
+                </ng-container>
+                <ng-template #cliente>
+                    <ng-container>
+                        <button type="button" class="btn btn-light m-1"><i class="fas fa-eye"></i></button>
+                        <button type="button" class="btn btn-dark m-1"><i class="fas fa-cart-plus"></i></button>
+                    </ng-container>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-eliminar-juego *ngIf="game" [juego]="game"></app-eliminar-juego>    
+<app-editar-juego *ngIf="game" [juego]="game"></app-editar-juego>
+
+<!-- para futuras opciones
+    <div *ngFor="let game of games" class="card bg-dark text-white">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnco7I9LExCtB-3j2VkAFSNeV9r9DFd8IJTw&usqp=CAU" width="200px" height="200px" class="card-img" alt="...">
+    <div class="card-img-overlay">
+        <div class="card-header">categoria...</div>
+        <h5 class="card-title">{{ game.nombre }}</h5>
+        <p class="card-text"><p>Descripcion: {{ game.descripcion }}<br/>Precio: $ {{ game.precio }}</p>
+    </div>
+  </div>-->

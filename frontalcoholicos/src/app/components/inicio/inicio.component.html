@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row">
+            <div *ngFor="let game of games" class="card m-4 col-3" style="width: 18rem;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnco7I9LExCtB-3j2VkAFSNeV9r9DFd8IJTw&usqp=CAU" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h3>Juego</h3>
+                    <p>Nombre Juego: {{ game.nombre }}</p>
+                    <p>Descripcion: {{ game.descripcion }}</p>
+                    <p>Precio: $ {{ game.precio }}</p>
+                </div>
+        </div>
+    </div>
+</div>
